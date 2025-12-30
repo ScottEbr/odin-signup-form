@@ -89,11 +89,6 @@ body {
     padding: 4px;
 }
 
-.error-msg{
-    margin-bottom: 12px;
-    visibility: hidden;
-}
-
 .input-container input {
     flex: 1;
     height: 100%;
@@ -114,10 +109,20 @@ input:focus {
     border: 1px solid var(--clr-danger-a10);
 }
 
+.input-container.has-error {
+    border: 1px solid var(--clr-danger-a10);
+}
+
 .input-container img {
     height: 80%;
     width: auto;
     margin: 0px 8px 0px 8px;
+
+}
+
+.error-msg {
+    color: var(--clr-danger-a0);
+    min-height: 36px;
 
 }
 

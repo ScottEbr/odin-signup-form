@@ -1,0 +1,162 @@
+:root {
+    /** Base colors */
+    --clr-dark-a0: #000000;
+    --clr-light-a0: #ffffff;
+
+    /** Theme primary colors */
+    --clr-primary-a0: #00ff41;
+    --clr-primary-a10: #52ff5c;
+    --clr-primary-a20: #74ff73;
+    --clr-primary-a30: #8eff89;
+    --clr-primary-a40: #a5ff9d;
+    --clr-primary-a50: #b9ffb1;
+
+    /** Theme surface colors */
+    --clr-surface-a0: #121212;
+    --clr-surface-a10: #282828;
+    --clr-surface-a20: #3f3f3f;
+    --clr-surface-a30: #575757;
+    --clr-surface-a40: #717171;
+    --clr-surface-a50: #8b8b8b;
+
+    /** Theme tonal surface colors */
+    --clr-surface-tonal-a0: #1a2619;
+    --clr-surface-tonal-a10: #2f3a2e;
+    --clr-surface-tonal-a20: #465045;
+    --clr-surface-tonal-a30: #5e675c;
+    --clr-surface-tonal-a40: #767e75;
+    --clr-surface-tonal-a50: #90978f;
+
+    /** Success colors */
+    --clr-success-a0: #22946e;
+    --clr-success-a10: #47d5a6;
+    --clr-success-a20: #9ae8ce;
+
+    /** Warning colors */
+    --clr-warning-a0: #a87a2a;
+    --clr-warning-a10: #d7ac61;
+    --clr-warning-a20: #ecd7b2;
+
+    /** Danger colors */
+    --clr-danger-a0: #9c2121;
+    --clr-danger-a10: #d94a4a;
+    --clr-danger-a20: #eb9e9e;
+
+    /** Info colors */
+    --clr-info-a0: #21498a;
+    --clr-info-a10: #4077d1;
+    --clr-info-a20: #92b2e5;
+}
+/* https://colorffy.com/ */
+
+body {
+    background-color: var(--clr-surface-a0);
+    color: var(--clr-light-a0);
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.image-container {
+    flex-basis: 40%;
+}
+
+.content {
+    display: flex;
+    flex-basis: 60%;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    min-height: 100vh;
+    background-color: var(--clr-dark-a0);
+}
+
+::placeholder {
+    color: var(--clr-surface-a50);
+}
+
+.input-container {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    background-color: var(--clr-surface-a10);
+    border-radius: 8px;
+    border: 1px solid var(--clr-surface-a0);
+    /* margin-bottom: 36px; */
+    padding: 4px;
+}
+
+.error-msg{
+    margin-bottom: 12px;
+    visibility: hidden;
+}
+
+.input-container input {
+    flex: 1;
+    height: 100%;
+    background-color: var(--clr-surface-a10);
+    color: var(--clr-light-a0);
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.input-container:focus-within {
+    border: 1px solid var(--clr-primary-a40);
+}
+
+.input-container:has(input:user-invalid) {
+    border: 1px solid var(--clr-danger-a10);
+}
+
+.input-container img {
+    height: 80%;
+    width: auto;
+    margin: 0px 8px 0px 8px;
+
+}
+
+.submit-btn {
+    background-color: var(--clr-danger-a10);
+    border: none;
+    color: var(--clr-light-a0);
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.5s ease;
+    margin-right: 25px;
+}
+
+.submit-btn:hover {
+    background-color: var(--clr-danger-a0);
+    transform: scale(1.05);
+}
+
+.dupe-btn {
+    background-color: var(--clr-info-a10);
+    border: none;
+    color: var(--clr-light-a0);
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.5s ease;
+    margin-right: 25px;
+}
+
+.dupe-btn:hover {
+    background-color: var(--clr-info-a0);
+    transform: scale(1.05);
+}

@@ -3,6 +3,7 @@ const email = document.getElementById("email_name");
 const password = document.getElementById("password");
 const passwordConfirm = document.getElementById("password-confirm");
 const submitBtn = document.querySelector(".submit-btn");
+const overlay = document.getElementById("fade-overlay");
 
 function getErrorDiv(input) {
     return input.parentElement.nextElementSibling;
@@ -120,6 +121,7 @@ submitBtn.addEventListener("click", (e) => {
         return;
     }
 
-    // If everything is valid, form proceeds naturally - TO BE COMPLETE
+    overlay.classList.add("active");
+    overlay.addEventListener("transitionend", () => {window.location.href = "./matrix.html"}, { once: true });
 
 });

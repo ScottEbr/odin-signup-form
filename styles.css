@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 :root {
     /** Base colors */
     --clr-dark-a0: #000000;
@@ -15,27 +17,6 @@
     --clr-surface-a0: #121212;
     --clr-surface-a10: #282828;
     --clr-surface-a20: #3f3f3f;
-    --clr-surface-a30: #575757;
-    --clr-surface-a40: #717171;
-    --clr-surface-a50: #8b8b8b;
-
-    /** Theme tonal surface colors */
-    --clr-surface-tonal-a0: #1a2619;
-    --clr-surface-tonal-a10: #2f3a2e;
-    --clr-surface-tonal-a20: #465045;
-    --clr-surface-tonal-a30: #5e675c;
-    --clr-surface-tonal-a40: #767e75;
-    --clr-surface-tonal-a50: #90978f;
-
-    /** Success colors */
-    --clr-success-a0: #22946e;
-    --clr-success-a10: #47d5a6;
-    --clr-success-a20: #9ae8ce;
-
-    /** Warning colors */
-    --clr-warning-a0: #a87a2a;
-    --clr-warning-a10: #d7ac61;
-    --clr-warning-a20: #ecd7b2;
 
     /** Danger colors */
     --clr-danger-a0: #9c2121;
@@ -49,19 +30,63 @@
 }
 /* https://colorffy.com/ */
 
+
+* {
+    font-family: "Orbitron", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    
+}
+
 body {
-    background-color: var(--clr-surface-a0);
+    background-color: var(--clr-dark-a0);
     color: var(--clr-light-a0);
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     padding: 0px;
     margin: 0px;
     display: flex;
     align-items: center;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .image-container {
+    position: relative;
+    display: flex;
     flex-basis: 40%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: fadeInLeft 2s ease-out forwards;    
+}
+
+.web-title {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+    text-align: center;
+    pointer-events: none;
+    background: rgba(0,0,0,0.8);
+    animation: fadeInLeft 2s ease-out forwards;
+    width: 100%;
+    height: 120px;
+    gap: 16px;
+}
+
+.web-title img {
+    width: 60px;
+    height: 60px;
+    margin: 0px 8px 0px 8px;
 }
 
 .content {
@@ -72,6 +97,7 @@ body {
     min-width: 200px;
     min-height: 100vh;
     background-color: var(--clr-dark-a0);
+    animation: fadeInRight 2s ease-out forwards;
 }
 
 ::placeholder {
@@ -85,8 +111,8 @@ body {
     background-color: var(--clr-surface-a10);
     border-radius: 8px;
     border: 1px solid var(--clr-surface-a0);
-    /* margin-bottom: 36px; */
     padding: 4px;
+    
 }
 
 .input-container input {
@@ -164,4 +190,86 @@ input:focus {
 .dupe-btn:hover {
     background-color: var(--clr-info-a0);
     transform: scale(1.05);
+}
+
+#fade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+    z-index: 9999;
+}
+
+#fade-overlay.active {
+    opacity: 1;
+}
+
+.footer {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    animation: fadeInRight 2s ease-out forwards;
+    margin-right: 16px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    animation: fadeInLeft 2s ease-out forwards;
+    margin-left: 16px;
+}
+
+.github-logo, .pexels-logo {
+    display: block;
+    max-width: 28px;
+    max-height: 28px;
+    transition: transform 0.3s ease-in-out;
+  
+}
+
+.pexels-logo:hover {
+    transform: scale(1.2);
+}
+
+.github-logo:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
